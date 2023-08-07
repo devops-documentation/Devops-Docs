@@ -37,7 +37,7 @@
 <pre><code>sudo apt-get install git-all
 </code></pre>
 <p>Once the command output has completed, you can verify the installation by typing:</p>
-<pre><code>enter code here
+<pre><code>git version
 </code></pre>
 <h4 id="fedora"><a href="https://github.com/git-guides/install-git#fedora"></a>Fedora</h4>
 <p>Git packages are available using  <code>dnf</code>.To install Git, navigate to your command prompt shell and run the following command:</p>
