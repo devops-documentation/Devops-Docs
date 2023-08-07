@@ -241,7 +241,4 @@
 <p><img src="https://i.imgur.com/W0xPQRm.png" alt="Imgur"></p>
 </li>
 </ul>
-<p>jhjhfkdhgk</p>
-<pre><code>jfhjdhfkdhk
-</code></pre>
 
