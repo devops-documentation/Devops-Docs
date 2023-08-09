@@ -30,44 +30,44 @@ CMD ["java", "-jar", "/app.jar"]
 <p>The <code>aws.yml</code> file code view opens up;<br>
 <img src="https://miro.medium.com/v2/resize:fit:828/format:webp/1*-QdxgqD9C5gWYX-BvAgQXw.png" alt=""></p>
 <p>In the  <code>aws.yml</code>  file, I made some changes such as setting up a hook so you can run the action without committing a push change using the  <code>workflow_dispatch</code>  hook instead of having every change in the branch create a deployment. changed the environments variables such as branch name, task definition name, container name, service, and cluster.</p>
-<pre><code>name: Java CI with Maven
-
-on:
-  push:
-    branches:
-      - &lt;your branch name&gt;
-  workflow_dispatch:  # Run workflow manually
-
-jobs:
-  build:
-    runs-on: Linux
-
-steps:
-  - uses: actions/checkout@v3  # Check out the repository
-  - name: Set up JDK 17
-    uses: actions/setup-java@v3
-    with:
-      java-version: '17'
-      distribution: 'temurin'
-      cache: maven  # Cache Maven dependencies
-  - name: Build with Maven
-    run: mvn package  # Build the Java application using Maven
-  - name: Build Docker Image
-    run: |
-      docker image prune -f -a  # Remove all running Docker images
-      docker build -t [your image name] .  # Build a Docker image
-      docker tag [your image name]:latest &lt;your ECR repository name&gt;  # Tag the Docker image
-  - name: Push Image to ECR
-    run: |
-      aws ecr get-login-password --region [your AWS region] | docker login --username AWS --password-stdin 349295925195.dkr.ecr.ap-south-2.amazonaws.com  # Log in to ECR
-      docker push [your ECR repository name]  # Push the Docker image to ECR
-      aws ecs describe-task-definition --task-definition [your task definition name] --query taskDefinition --region [your region] &gt; task-definition.json  # Describe task definition and save to JSON file
-  - name: Configure AWS credentials
-    uses: aws-actions/configure-aws-credentials@v1
-    with:
-      aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID_ECOHEX_API }}  # Access key ID
-      aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY_ECOHEX_API }}  # Secret access key
-      aws-region: [your region]  # AWS region
+<pre><code>  name: Java CI with Maven
+    
+    	on:
+    	  push:
+    	    branches:
+    	      - &lt;your branch name&gt;
+    	  workflow_dispatch:  # Run workflow manually
+    
+    	jobs:
+    	  build:
+    	    runs-on: Linux
+    
+        steps:
+          - uses: actions/checkout@v3  # Check out the repository
+          - name: Set up JDK 17
+            uses: actions/setup-java@v3
+            with:
+              java-version: '17'
+              distribution: 'temurin'
+              cache: maven  # Cache Maven dependencies
+          - name: Build with Maven
+            run: mvn package  # Build the Java application using Maven
+          - name: Build Docker Image
+            run: |
+              docker image prune -f -a  # Remove all running Docker images
+              docker build -t [your image name] .  # Build a Docker image
+              docker tag [your image name]:latest &lt;your ECR repository name&gt;  # Tag the Docker image
+          - name: Push Image to ECR
+            run: |
+              aws ecr get-login-password --region [your AWS region] | docker login --username AWS --password-stdin 349295925195.dkr.ecr.ap-south-2.amazonaws.com  # Log in to ECR
+              docker push [your ECR repository name]  # Push the Docker image to ECR
+              aws ecs describe-task-definition --task-definition [your task definition name] --query taskDefinition --region [your region] &gt; task-definition.json  # Describe task definition and save to JSON file
+          - name: Configure AWS credentials
+            uses: aws-actions/configure-aws-credentials@v1
+            with:
+              aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID_ECOHEX_API }}  # Access key ID
+              aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY_ECOHEX_API }}  # Secret access key
+              aws-region: [your region]  # AWS region
 </code></pre>
 <p>Here are a few things you should replace with your actual values:</p>
 <ol>
