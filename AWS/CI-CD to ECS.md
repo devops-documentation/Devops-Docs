@@ -30,8 +30,7 @@ CMD ["java", "-jar", "/app.jar"]
 <p>The <code>aws.yml</code> file code view opens up;<br>
 <img src="https://miro.medium.com/v2/resize:fit:828/format:webp/1*-QdxgqD9C5gWYX-BvAgQXw.png" alt=""></p>
 <p>In the  <code>aws.yml</code>  file, I made some changes such as setting up a hook so you can run the action without committing a push change using the  <code>workflow_dispatch</code>  hook instead of having every change in the branch create a deployment. changed the environments variables such as branch name, task definition name, container name, service, and cluster.</p>
-<pre><code>  name: Java CI with Maven
-    
+<pre><code>        name: Java CI with Maven
     	on:
     	  push:
     	    branches:
@@ -168,7 +167,6 @@ Port mappings (add whatever ports you want open) &gt;
 <h1 id="deployment-using-git-action">Deployment using Git Action</h1>
 <p>This is the final git actions workflow <code>.yml</code> code</p>
 <pre><code>name: Java CI with Maven
-
 on:
   push:
     branches:
