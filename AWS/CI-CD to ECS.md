@@ -36,11 +36,9 @@ CMD ["java", "-jar", "/app.jar"]
     	    branches:
     	      - &lt;your branch name&gt;
     	  workflow_dispatch:  # Run workflow manually
-    
     	jobs:
     	  build:
     	    runs-on: Linux
-    
         steps:
           - uses: actions/checkout@v3  # Check out the repository
           - name: Set up JDK 17
@@ -172,7 +170,6 @@ on:
     branches:
       - &lt;your-branch-name&gt;
   workflow_dispatch: # run workflow manually
-
 jobs:
   build:
     runs-on: Linux
