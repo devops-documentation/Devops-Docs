@@ -173,40 +173,33 @@ on:
 jobs:
   build:
     runs-on: Linux
-
 steps:
   - name: Checkout Repository
     uses: actions/checkout@v2
-
   - name: Set up JDK 17
     uses: actions/setup-java@v2
     with:
       java-version: '17'
       distribution: 'temurin'
       cache: maven
-
   - name: Build with Maven
     run: mvn package
-
   - name: Build Docker Image
     run: |
       docker image prune -f -a
       docker build -t &lt;your-image-name&gt; .
       docker tag &lt;your-image-name&gt;:latest &lt;your-ecr-repository-name&gt;
-
   - name: Push Image to ECR
     run: |
       aws ecr get-login-password --region &lt;your-aws-region&gt; | docker login --username AWS --password-stdin &lt;your-ecr-repository-uri&gt;
       docker push &lt;your-ecr-repository-uri&gt;
       aws ecs describe-task-definition --task-definition &lt;your-task-definition-name&gt; --query taskDefinition --region &lt;your-region&gt; &gt; task-definition.json
-
   - name: Configure AWS credentials
     uses: aws-actions/configure-aws-credentials@v1
     with:
       aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID_ECOHEX_API }}
       aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY_ECOHEX_API }}
       aws-region: &lt;your-region&gt;
-
   - name: Fill in the new image ID in the Amazon ECS task definition
     id: task-def
     uses: aws-actions/amazon-ecs-render-task-definition@v1
@@ -214,7 +207,6 @@ steps:
       task-definition: task-definition.json
       container-name: &lt;your-container-name&gt;
       image: &lt;your-ecr-repository-uri&gt;:latest
-
   - name: Deploy Amazon ECS task definition
     uses: aws-actions/amazon-ecs-deploy-task-definition@v1
     with:
