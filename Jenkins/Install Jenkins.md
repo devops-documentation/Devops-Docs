@@ -44,4 +44,168 @@
 <li>Finally, here is the default Jenkins page. Jenkins is now installed and running on Windows, and you are ready to start building your CI/CD pipeline.</li>
 </ol>
 <p><img src="https://www.blazemeter.com/sites/default/files/image/2022-06/b1i17.png" alt=""></p>
+<h1 id="install-on-linux">Install on Linux</h1>
+<p>To install Jenkins on a Linux system, you can follow these general steps. Note that the specific commands might vary depending on your Linux distribution. Here, I’ll provide instructions for Debian/Ubuntu and CentOS/RHEL.</p>
+<h3 id="debianubuntu">Debian/Ubuntu</h3>
+<ol>
+<li>Update the package list:</li>
+</ol>
+<p>bashCopy code</p>
+<pre><code>sudo apt update
+</code></pre>
+<p><img src="https://i.imgur.com/8FcLpwG.png" alt="Imgur"></p>
+<ol start="2">
+<li>Install Java Development Kit (JDK):</li>
+</ol>
+<p>bashCopy code</p>
+<pre><code>sudo apt install default-jdk 
+</code></pre>
+<p><img src="https://i.imgur.com/sk4iTja.png" alt="Imgur"></p>
+<ul>
+<li>click on <code>y</code> to continue</li>
+</ul>
+<ol start="3">
+<li>Add the Jenkins repository key to the system:</li>
+</ol>
+<p>bashCopy code</p>
+<pre><code>wget -q -O - https://pkg.jenkins.io/debian/jenkins.io.key | sudo apt-key add - 
+</code></pre>
+<p><img src="https://i.imgur.com/HCCqRkk.png" alt="Imgur"></p>
+<ol start="4">
+<li>Add the Jenkins repository to the package sources:</li>
+</ol>
+<p>bashCopy code</p>
+<pre><code>sudo sh -c 'echo deb http://pkg.jenkins.io/debian-stable binary/ &gt; /etc/apt/sources.list.d/jenkins.list' 
+</code></pre>
+<p><img src="https://i.imgur.com/TutTgK8.png" alt="Imgur"></p>
+<ol start="5">
+<li>Update the package list again:</li>
+</ol>
+<p>bashCopy code</p>
+<pre><code>sudo apt update
+</code></pre>
+<p><img src="https://i.imgur.com/8FcLpwG.png" alt="Imgur"></p>
+<ol start="6">
+<li>Install Jenkins:</li>
+</ol>
+<p>bashCopy code</p>
+<pre><code>sudo apt install jenkins 
+</code></pre>
+<p><img src="https://i.imgur.com/M2Pp6Sk.png" alt="Imgur"></p>
+<ol start="7">
+<li>Start the Jenkins service:</li>
+</ol>
+<p>bashCopy code</p>
+<pre><code>sudo systemctl start jenkins
+</code></pre>
+<ol start="8">
+<li>Enable the Jenkins service to start on boot:</li>
+</ol>
+<p>bashCopy code</p>
+<pre><code>sudo systemctl enable jenkins
+</code></pre>
+<ol start="9">
+<li>Open your web browser and access Jenkins at public ip address of your ubuntu eg: <code>192.168.33.10:8080</code>. Follow the instructions to complete the setup.</li>
+</ol>
+<p><img src="https://i.imgur.com/AQBTLIw.png" alt="Imgur"></p>
+<ul>
+<li>copy the path to get key and use cat command to see</li>
+</ul>
+<p><img src="https://i.imgur.com/LO55sTS.png" alt="Imgur"></p>
+<p>.  Then, click the Continue button.</p>
+<p><img src="https://www.blazemeter.com/sites/default/files/image/2022-06/b1i11.png" alt=""></p>
+<ol start="5">
+<li>
+<p>You can install either the suggested plugins or selected plugins you choose based on your needs. To keep it simple, we will install the suggested plugins that the Jenkins community finds most useful.<br>
+<img src="https://www.blazemeter.com/sites/default/files/image/2022-06/b1i12.png" alt=""></p>
+</li>
+<li>
+<p>Wait until the plugins are completely installed.</p>
+</li>
+</ol>
+<p><img src="https://www.blazemeter.com/sites/default/files/image/2022-06/b1i13.png" alt=""></p>
+<ol start="6">
+<li>The next thing that you should do is create an Admin user for Jenkins. Then, enter your details and click Save and Continue.</li>
+</ol>
+<p><img src="https://www.blazemeter.com/sites/default/files/image/2022-06/b1i14.png" alt=""></p>
+<ol start="7">
+<li>Click on Save and Finish to complete the Jenkins installation</li>
+</ol>
+<p><img src="https://www.blazemeter.com/sites/default/files/image/2022-06/b1i15.png" alt=""></p>
+<ol start="8">
+<li>Now, click on the “Start using Jenkins” button to start Jenkins.</li>
+</ol>
+<p><img src="https://www.blazemeter.com/sites/default/files/image/2022-06/b1i16.png" alt=""></p>
+<ol start="9">
+<li>Finally, here is the default Jenkins page. Jenkins is now installed and running on Windows, and you are ready to start building your CI/CD pipeline.</li>
+</ol>
+<p><img src="https://www.blazemeter.com/sites/default/files/image/2022-06/b1i17.png" alt=""></p>
+<h3 id="centosrhel">CentOS/RHEL</h3>
+<ol>
+<li>Install Java Development Kit (JDK):</li>
+</ol>
+<p>bashCopy code</p>
+<pre><code>sudo yum install java-1.8.0-openjdk
+</code></pre>
+<ol start="2">
+<li>Import the Jenkins repository key:</li>
+</ol>
+<p>bashCopy code</p>
+<pre><code>sudo rpm --import https://pkg.jenkins.io/redhat/jenkins.io.key
+</code></pre>
+<ol start="3">
+<li>Add the Jenkins repository:</li>
+</ol>
+<p>bashCopy code</p>
+<pre><code>sudo sh -c 'echo -e "[jenkins]\nname=Jenkins\nbaseurl=http://pkg.jenkins.io/redhat\nenabled=1\ngpgcheck=1" &gt; /etc/yum.repos.d/jenkins.repo' 
+</code></pre>
+<ol start="4">
+<li>Install Jenkins:</li>
+</ol>
+<p>bashCopy code</p>
+<pre><code>sudo yum install jenkins 
+</code></pre>
+<ol start="5">
+<li>Start the Jenkins service:</li>
+</ol>
+<p>bashCopy code</p>
+<pre><code>sudo systemctl start jenkins 
+</code></pre>
+<ol start="6">
+<li>Enable the Jenkins service to start on boot:</li>
+</ol>
+<p>bashCopy code</p>
+<pre><code>sudo systemctl enable jenkins`
+</code></pre>
+<ol start="7">
+<li>Open your web browser and access Jenkins at <code>http://localhost:8080</code>. Follow the instructions to complete the setup.</li>
+</ol>
+<p>. To unlock Jenkins, copy the password from the file intialAdminPassword. This file should be found under the Jenkins installation path. Copy the content of the initialAdminPassword file and paste it into the Administrator password field. Then, click the Continue button.</p>
+<p><img src="https://www.blazemeter.com/sites/default/files/image/2022-06/b1i11.png" alt=""></p>
+<ol start="5">
+<li>
+<p>You can install either the suggested plugins or selected plugins you choose based on your needs. To keep it simple, we will install the suggested plugins that the Jenkins community finds most useful.<br>
+<img src="https://www.blazemeter.com/sites/default/files/image/2022-06/b1i12.png" alt=""></p>
+</li>
+<li>
+<p>Wait until the plugins are completely installed.</p>
+</li>
+</ol>
+<p><img src="https://www.blazemeter.com/sites/default/files/image/2022-06/b1i13.png" alt=""></p>
+<ol start="6">
+<li>The next thing that you should do is create an Admin user for Jenkins. Then, enter your details and click Save and Continue.</li>
+</ol>
+<p><img src="https://www.blazemeter.com/sites/default/files/image/2022-06/b1i14.png" alt=""></p>
+<ol start="7">
+<li>Click on Save and Finish to complete the Jenkins installation</li>
+</ol>
+<p><img src="https://www.blazemeter.com/sites/default/files/image/2022-06/b1i15.png" alt=""></p>
+<ol start="8">
+<li>Now, click on the “Start using Jenkins” button to start Jenkins.</li>
+</ol>
+<p><img src="https://www.blazemeter.com/sites/default/files/image/2022-06/b1i16.png" alt=""></p>
+<ol start="9">
+<li>Finally, here is the default Jenkins page. Jenkins is now installed and running on Windows, and you are ready to start building your CI/CD pipeline.</li>
+</ol>
+<p><img src="https://www.blazemeter.com/sites/default/files/image/2022-06/b1i17.png" alt=""></p>
 
