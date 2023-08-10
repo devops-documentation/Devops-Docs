@@ -27,6 +27,81 @@
 <pre><code>java -version
 </code></pre>
 <p><img src="https://media.geeksforgeeks.org/wp-content/uploads/20220622120248/Step3CheckingJDKVersion.png" alt=""></p>
+<h2 id="install-jdk-on-linux">Install JDK On Linux</h2>
+<h3 id="debian-basedububtu">Debian-based:(ububtu)</h3>
+<p>To install the Java Development Kit (JDK) on a Linux system, you can follow these steps. I’ll provide instructions for installing OpenJDK, which is the open-source implementation of the Java Platform.</p>
+<ol>
+<li>
+<p><strong>Update Package Repositories (Optional)</strong>: It’s a good practice to update your package repositories before installing new software. Run the following command:</p>
+<p>bashCopy code</p>
+<pre><code>sudo apt update 
+</code></pre>
+</li>
+</ol>
+<p><img src="https://i.imgur.com/8FcLpwG.png" alt="Imgur"></p>
+<pre><code>This command is for Debian-based distributions like Ubuntu. If you're using a different distribution, use the appropriate package manager's update command.
+</code></pre>
+<ol start="2">
+<li>
+<p><strong>Install OpenJDK</strong>: You can install OpenJDK using your distribution’s package manager. The package name might vary depending on the version of Java you want to install. Typically, OpenJDK 8, 11, and 16 are common versions.</p>
+<p>For OpenJDK 11, run the following command:</p>
+<p>bashCopy code</p>
+<pre><code>sudo apt install openjdk-11-jdk 
+</code></pre>
+</li>
+</ol>
+<p><img src="https://i.imgur.com/sk4iTja.png" alt="Imgur"></p>
+<ul>
+<li>
+<p>click on <code>y</code> to continue</p>
+<p>For OpenJDK 8 or 16, replace <code>11</code> with <code>8</code> or <code>16</code> in the package name.</p>
+</li>
+</ul>
+<ol start="3">
+<li>
+<p><strong>Verify Installation</strong>: Once the installation is complete, you can verify it by checking the installed Java version:</p>
+<p>bashCopy code</p>
+<pre><code>java -version 
+</code></pre>
+</li>
+</ol>
+<p><img src="https://i.imgur.com/omssgOE.png" alt="Imgur"></p>
+<pre><code>You should see output indicating the installed Java version.
+</code></pre>
+<ol start="4">
+<li>
+<p><strong>Configure Default Java Version (Optional)</strong>: If you have multiple Java versions installed, you can set the default version using the <code>update-alternatives</code> command:</p>
+<p>bashCopy code</p>
+<pre><code>sudo update-alternatives --config java 
+</code></pre>
+<p>This command will present you with a list of installed Java versions. Choose the one you want to set as default by entering the corresponding number.</p>
+</li>
+</ol>
+<p>That’s it! You have successfully installed the OpenJDK Java Development Kit on your Linux system. Remember that package names and installation methods might vary slightly depending on your specific Linux distribution.</p>
+<h3 id="centos">CentOS</h3>
+<p>CentOS has a similar process to Fedora.</p>
+<ol>
+<li>
+<p><strong>Update Package Repositories (Optional)</strong>:</p>
+<p>bashCopy code</p>
+<pre><code>sudo yum update 
+</code></pre>
+</li>
+<li>
+<p><strong>Install OpenJDK</strong>:</p>
+<p>For OpenJDK 11:</p>
+<p>bashCopy code</p>
+<pre><code>sudo yum install java-1.8.0-openjdk 
+</code></pre>
+<p>For OpenJDK 8 or 16, replace <code>11</code> with <code>8</code> or <code>16</code> in the package name.</p>
+</li>
+<li>
+<p><strong>Verify Installation</strong>:</p>
+<p>bashCopy code</p>
+<pre><code>java -version
+</code></pre>
+</li>
+</ol>
 <h2 id="install-jdk-on-macos">Install JDK on MacOS</h2>
 <h3 id="step-1-download-and-install-oracle-java-development-kit-jdk"><strong>Step 1: Download and Install Oracle Java Development Kit (JDK)</strong></h3>
 <p>The very first step is to download the  <strong>Oracle Java Development Kit (JDK)</strong>  from the Official Oracle Website. For that, Head over to the  <a href="https://www.oracle.com/java/technologies/downloads/#jdk18-mac">Official Website</a>.</p>
