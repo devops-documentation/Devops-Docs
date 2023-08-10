@@ -39,8 +39,7 @@
 </li>
 </ol>
 <p><img src="https://i.imgur.com/8FcLpwG.png" alt="Imgur"></p>
-<pre><code>This command is for Debian-based distributions like Ubuntu. If you're using a different distribution, use the appropriate package manager's update command.
-</code></pre>
+<p>This command is for Debian-based distributions like Ubuntu. If you’re using a different distribution, use the appropriate package manager’s update command.</p>
 <ol start="2">
 <li>
 <p><strong>Install OpenJDK</strong>: You can install OpenJDK using your distribution’s package manager. The package name might vary depending on the version of Java you want to install. Typically, OpenJDK 8, 11, and 16 are common versions.</p>
@@ -66,8 +65,7 @@
 </li>
 </ol>
 <p><img src="https://i.imgur.com/omssgOE.png" alt="Imgur"></p>
-<pre><code>You should see output indicating the installed Java version.
-</code></pre>
+<p>You should see output indicating the installed Java version.</p>
 <ol start="4">
 <li>
 <p><strong>Configure Default Java Version (Optional)</strong>: If you have multiple Java versions installed, you can set the default version using the <code>update-alternatives</code> command:</p>
