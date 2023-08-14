@@ -2,8 +2,6 @@
 
 Let's look at AWS S3. S3 is an easy-to-use, scalable, and cheap storage service from Amazon. You can use S3 to store any amount of data for a wide range of use cases.
 
-    asdbkDNA,ndmB
-
 Static website hosting, data archival, and software delivery are a few general scenarios where S3 would be a perfect tool.
 
 You can easily push and pull data with S3 using the AWS SDK. S3 also supports a number of popular programming languages, so you can use your existing stack and integrate S3 pretty easily.
