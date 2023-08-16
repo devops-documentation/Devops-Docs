@@ -199,7 +199,7 @@
 </ol>
 <p><img src="https://i.imgur.com/z1osJef.png" alt="Imgur"></p>
 <ol start="7">
-<li>Open your web browser and access Jenkins at <code>http://localhost:8080</code>. Follow the instructions to complete the setup.</li>
+<li>Open your web browser and access Jenkins at public ip address of your centos eg: <code>192.168.33.10:8080</code>. Follow the instructions to complete the setup.</li>
 </ol>
 <p>. To unlock Jenkins, copy the password from the file intialAdminPassword. This file should be found under the Jenkins installation path. Copy the content of the initialAdminPassword file and paste it into the Administrator password field. Then, click the Continue button.</p>
 <p><img src="https://www.blazemeter.com/sites/default/files/image/2022-06/b1i11.png" alt=""></p>
