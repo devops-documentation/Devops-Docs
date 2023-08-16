@@ -39,9 +39,9 @@
 <p>Once the command output has completed, you can verify the installation by typing:</p>
 <pre><code>git version
 </code></pre>
-<h4 id="fedora"><a href="https://github.com/git-guides/install-git#fedora"></a>Fedora</h4>
+<h4 id="cantos">cantos</h4>
 <p>Git packages are available using  <code>dnf</code>.To install Git, navigate to your command prompt shell and run the following command:</p>
-<pre><code>sudo dnf install git-all`
+<pre><code>sudo yum install git
 </code></pre>
 <p>Once the command output has completed, you can verify the installation by typing:</p>
 <pre><code>git version
