@@ -39,12 +39,15 @@
 <p>Once the command output has completed, you can verify the installation by typing:</p>
 <pre><code>git version
 </code></pre>
+<p><img src="https://i.imgur.com/ODPgoIq.png" alt="Imgur"></p>
 <h4 id="cantos">cantos</h4>
 <p>Git packages are available using  <code>dnf</code>.To install Git, navigate to your command prompt shell and run the following command:</p>
 <pre><code>sudo yum install git
 </code></pre>
+<p><img src="https://i.imgur.com/rTfZfSc.png" alt="Imgur"></p>
 <p>Once the command output has completed, you can verify the installation by typing:</p>
 <pre><code>git version
 </code></pre>
+<p><img src="https://i.imgur.com/ODPgoIq.png" alt="Imgur"></p>
 <p>Note: You can download the proper Git versions and read more about how to install on specific Linux systems, like installing Git on Ubuntu or Fedora,  <a href="https://git-scm.com/download/linux">in git-scm’s documentation</a>.</p>
 
