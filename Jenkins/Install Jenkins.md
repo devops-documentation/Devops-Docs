@@ -48,64 +48,70 @@
 <p>To install Jenkins on a Linux system, you can follow these general steps. Note that the specific commands might vary depending on your Linux distribution. Here, I’ll provide instructions for Debian/Ubuntu and CentOS/RHEL.</p>
 <h3 id="debianubuntu">Debian/Ubuntu</h3>
 <ol>
-<li>Update the package list:</li>
-</ol>
-<p>bashCopy code</p>
+<li>
+<p>Update the package list:</p>
 <pre><code>sudo apt update
 </code></pre>
+</li>
+</ol>
 <p><img src="https://i.imgur.com/8FcLpwG.png" alt="Imgur"></p>
 <ol start="2">
-<li>Install Java Development Kit (JDK):</li>
-</ol>
-<p>bashCopy code</p>
+<li>
+<p>Install Java Development Kit (JDK):</p>
 <pre><code>sudo apt install default-jdk 
 </code></pre>
+</li>
+</ol>
 <p><img src="https://i.imgur.com/sk4iTja.png" alt="Imgur"></p>
 <ul>
 <li>click on <code>y</code> to continue</li>
 </ul>
 <ol start="3">
-<li>Add the Jenkins repository key to the system:</li>
-</ol>
-<p>bashCopy code</p>
+<li>
+<p>Add the Jenkins repository key to the system:</p>
 <pre><code>wget -q -O - https://pkg.jenkins.io/debian/jenkins.io.key | sudo apt-key add - 
 </code></pre>
+</li>
+</ol>
 <p><img src="https://i.imgur.com/HCCqRkk.png" alt="Imgur"></p>
 <ol start="4">
-<li>Add the Jenkins repository to the package sources:</li>
-</ol>
-<p>bashCopy code</p>
+<li>
+<p>Add the Jenkins repository to the package sources:</p>
 <pre><code>sudo sh -c 'echo deb http://pkg.jenkins.io/debian-stable binary/ &gt; /etc/apt/sources.list.d/jenkins.list' 
 </code></pre>
+</li>
+</ol>
 <p><img src="https://i.imgur.com/TutTgK8.png" alt="Imgur"></p>
 <ol start="5">
-<li>Update the package list again:</li>
-</ol>
-<p>bashCopy code</p>
+<li>
+<p>Update the package list again:</p>
 <pre><code>sudo apt update
 </code></pre>
+</li>
+</ol>
 <p><img src="https://i.imgur.com/8FcLpwG.png" alt="Imgur"></p>
 <ol start="6">
-<li>Install Jenkins:</li>
-</ol>
-<p>bashCopy code</p>
+<li>
+<p>Install Jenkins:</p>
 <pre><code>sudo apt install jenkins 
 </code></pre>
+</li>
+</ol>
 <p><img src="https://i.imgur.com/M2Pp6Sk.png" alt="Imgur"></p>
 <ol start="7">
-<li>Start the Jenkins service:</li>
-</ol>
-<p>bashCopy code</p>
-<pre><code>sudo systemctl start jenkins
+<li>
+<p>Start the Jenkins service:</p>
+<pre><code>   sudo systemctl start jenkins
 </code></pre>
-<ol start="8">
-<li>Enable the Jenkins service to start on boot:</li>
-</ol>
-<p>bashCopy code</p>
-<pre><code>sudo systemctl enable jenkins
+</li>
+<li>
+<p>Enable the Jenkins service to start on boot:</p>
+<pre><code>   sudo systemctl enable jenkins
 </code></pre>
-<ol start="9">
-<li>Open your web browser and access Jenkins at public ip address of your ubuntu eg: <code>192.168.33.10:8080</code>. Follow the instructions to complete the setup.</li>
+</li>
+<li>
+<p>Open your web browser and access Jenkins at public ip address of your ubuntu eg: <code>192.168.33.10:8080</code>. Follow the instructions to complete the setup.</p>
+</li>
 </ol>
 <p><img src="https://i.imgur.com/AQBTLIw.png" alt="Imgur"></p>
 <ul>
@@ -142,41 +148,56 @@
 <p><img src="https://www.blazemeter.com/sites/default/files/image/2022-06/b1i17.png" alt=""></p>
 <h3 id="centosrhel">CentOS/RHEL</h3>
 <ol>
-<li>Install Java Development Kit (JDK):</li>
-</ol>
-<p>bashCopy code</p>
-<pre><code>sudo yum install java-1.8.0-openjdk
+<li>
+<p>Install Java Development Kit (JDK):</p>
+<pre><code>sudo yum install java-11-openjdk-devel
 </code></pre>
-<ol start="2">
-<li>Import the Jenkins repository key:</li>
+</li>
 </ol>
-<p>bashCopy code</p>
+<p><img src="https://i.imgur.com/sk4iTja.png" alt="Imgur"></p>
+<ul>
+<li>click on <code>y</code> to continue</li>
+</ul>
+<ol start="2">
+<li>
+<p>Import the Jenkins repository key:</p>
 <pre><code>sudo rpm --import https://pkg.jenkins.io/redhat/jenkins.io.key
 </code></pre>
-<ol start="3">
-<li>Add the Jenkins repository:</li>
+</li>
 </ol>
-<p>bashCopy code</p>
+<p><img src="https://i.imgur.com/RT7PlOm.png" alt="Imgur"></p>
+<ol start="3">
+<li>
+<p>Add the Jenkins repository:</p>
 <pre><code>sudo sh -c 'echo -e "[jenkins]\nname=Jenkins\nbaseurl=http://pkg.jenkins.io/redhat\nenabled=1\ngpgcheck=1" &gt; /etc/yum.repos.d/jenkins.repo' 
 </code></pre>
-<ol start="4">
-<li>Install Jenkins:</li>
+</li>
 </ol>
-<p>bashCopy code</p>
+<p><img src="https://i.imgur.com/RT7PlOm.png" alt="Imgur"></p>
+<ol start="4">
+<li>
+<p>Install Jenkins:</p>
 <pre><code>sudo yum install jenkins 
 </code></pre>
-<ol start="5">
-<li>Start the Jenkins service:</li>
+</li>
 </ol>
-<p>bashCopy code</p>
+<p><img src="https://i.imgur.com/M2Pp6Sk.png" alt="Imgur"></p>
+<ol start="5">
+<li>
+<p>Start the Jenkins service:</p>
 <pre><code>sudo systemctl start jenkins 
 </code></pre>
-<ol start="6">
-<li>Enable the Jenkins service to start on boot:</li>
+</li>
 </ol>
-<p>bashCopy code</p>
-<pre><code>sudo systemctl enable jenkins`
+<p><img src="https://i.imgur.com/XRjvlJs.png" alt="Imgur"></p>
+<ol start="6">
+<li>
+<p>Enable the Jenkins service to start on boot:</p>
+<pre><code>sudo systemctl enable jenkins
 </code></pre>
+</li>
+</ol>
+<p><img src="https://i.imgur.com/z1osJef.png" alt="Imgur"></p>
 <ol start="7">
 <li>Open your web browser and access Jenkins at <code>http://localhost:8080</code>. Follow the instructions to complete the setup.</li>
 </ol>
