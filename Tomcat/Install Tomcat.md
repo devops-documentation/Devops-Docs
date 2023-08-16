@@ -181,53 +181,60 @@ Prerequisites:</p>
 <li>
 <p><strong>Install Java Development Kit (JDK):</strong> Apache Tomcat requires Java to run. Install the JDK using the package manager appropriate for your Linux distribution.</p>
 <p>For Ubuntu/Debian:</p>
-<p>bashCopy code</p>
 <pre><code>sudo apt install default-jdk 
 </code></pre>
 <p>For CentOS/RHEL:</p>
-<p>bashCopy code</p>
 <pre><code>sudo yum install java-1.8.0-openjdk-devel
 </code></pre>
 </li>
 <li>
 <p><strong>Download Tomcat:</strong> Visit the official Apache Tomcat website and download the desired version of Tomcat. You can use <code>wget</code> or <code>curl</code> to download it directly to your server.</p>
-<p>bashCopy code</p>
-<pre><code>wget https://downloads.apache.org/tomcat/tomcat-X/vX.XX.XX/bin/apache-tomcat-X.XX.XX.tar.gz 
+<pre><code>wget https://downloads.apache.org/tomcat/tomcat-9/v9.0.34/bin/apache-tomcat-9.0.34.tar.gz 
 </code></pre>
 </li>
+</ol>
+<p><img src="https://i.imgur.com/EgC6KAj.png" alt="Imgur"></p>
+<ol start="4">
 <li>
 <p><strong>Extract Tomcat:</strong> Extract the downloaded archive to a location on your system.</p>
-<p>bashCopy code</p>
-<pre><code>tar -xvf apache-tomcat-X.XX.XX.tar.gz
+<pre><code>tar -xvf apache-tomcat-10.1.12.tar.gz
 </code></pre>
 </li>
+</ol>
+<p><img src="https://i.imgur.com/DZZnCab.png" alt="Imgur"></p>
+<ol start="5">
 <li>
 <p><strong>Move Tomcat:</strong> Move the extracted Tomcat folder to a desired location, such as <code>/opt</code>.</p>
-<p>bashCopy code</p>
-<pre><code>sudo mv apache-tomcat-X.XX.XX /opt/tomcat 
+<pre><code>sudo mv apache-tomcat-10.1.12 /opt/tomcat 
 </code></pre>
 </li>
+</ol>
+<p><img src="https://i.imgur.com/pkkno84.png" alt="Imgur"></p>
+<ol start="6">
 <li>
 <p><strong>Configure Environment Variables:</strong> Set the necessary environment variables. Open the <code>.bashrc</code> or <code>.bash_profile</code> file in your home directory and add the following lines:</p>
-<p>bashCopy code</p>
-<pre><code>export CATALINA_HOME=/opt/tomcat
+<pre><code>export CATALINA_HOME=/opt/tomcat/apache-tomcat-10.1.12
 </code></pre>
-<p>export PATH=<span class="katex--inline"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mi>A</mi><mi>T</mi><mi>H</mi><mo>:</mo></mrow><annotation encoding="application/x-tex">PATH:</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height: 0.68333em; vertical-align: 0em;"></span><span class="mord mathnormal" style="margin-right: 0.13889em;">P</span><span class="mord mathnormal">A</span><span class="mord mathnormal" style="margin-right: 0.13889em;">T</span><span class="mord mathnormal" style="margin-right: 0.08125em;">H</span><span class="mspace" style="margin-right: 0.277778em;"></span><span class="mrel">:</span></span></span></span></span>CATALINA_HOME/bin</p>
 </li>
+</ol>
+<p><img src="https://i.imgur.com/zvazkRW.png" alt="Imgur"></p>
+<ol start="7">
 <li>
 <p><strong>Reload Shell Configuration:</strong> Apply the changes made to the environment variables by either restarting your shell or running:</p>
-<p>bashCopy code</p>
 <pre><code>source ~/.bashrc 
 </code></pre>
 </li>
+</ol>
+<p><img src="https://i.imgur.com/KJuxrrW.png" alt="Imgur"></p>
+<ol start="8">
 <li>
 <p><strong>Start Tomcat:</strong> Start the Tomcat server using the <code>startup.sh</code> script.</p>
-<p>bashCopy code</p>
 <pre><code>$CATALINA_HOME/bin/startup.sh
 </code></pre>
 </li>
-<li>
-<p><strong>Access Tomcat:</strong> Open your web browser and access Tomcat at public ip address of your ubuntu eg: <code>192.168.33.10:8080</code></p>
-</li>
+</ol>
+<p><img src="https://i.imgur.com/bWywrs1.png" alt="Imgur"></p>
+<ol start="9">
+<li><strong>Access Tomcat:</strong> Open your web browser and access Tomcat at public ip address of your Linux eg: <code>192.168.33.10:8080</code></li>
 </ol>
 
