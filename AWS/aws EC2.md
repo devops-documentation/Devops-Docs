@@ -81,12 +81,11 @@ A key pair in AWS is a set of public and private keys that you use to authentica
 <li>Navigate to the directory where the .pem file is located.</li>
 <li>Run the following command:</li>
 </ol>
+<hr>
 <pre><code>ssh -i &lt;key-pair-name&gt;.pem ec2-user@&lt;instance-public-ip&gt;
-
 </code></pre>
 <p>For example, to connect to an instance with the public IP address 192.168.1.100 and the key pair named my-key-pair, you would run the following command:</p>
 <pre><code>ssh -i my-key-pair.pem ec2-user@192.168.1.100
-
 </code></pre>
 <p>You will be prompted to enter the password for the key pair. Once you have entered the password, you will be connected to the EC2 instance.</p>
 <p><strong>5)Network settings:</strong></p>
