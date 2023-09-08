@@ -168,27 +168,27 @@ Amazon creates the above resources on your behalf. IAM policies do not apply to 
 <li>In the  <strong>Name</strong>  field, enter a name for your route table.</li>
 <li>In the  <strong>VPC</strong>  field, select the VPC that you want the route table to be associated with</li>
 <li>(Optional) To add tags to your route table, choose <strong>Add tag</strong> and enter the tag key and tag value</li>
-<li>Choose <strong>Create route table</strong><br>
-<img src="https://i.imgur.com/EAqJR5a.png" alt="Imgur"></li>
+<li>Choose <strong>Create route table</strong></li>
 </ol>
-<p>-Then go the rb-public<br>
-<img src="https://i.imgur.com/6EB6rAc.png" alt="Imgur"></p>
-<p>-Then click “<strong>Edit routes</strong>”<br>
-<img src="https://i.imgur.com/2FDQeaF.png" alt="Imgur"></p>
-<p>-Then click “<strong>Add route</strong>”<br>
-<img src="https://i.imgur.com/SxndM24.png" alt="Imgur"></p>
-<p>-Then give <strong>0.0.0.0/0</strong> in then Defination and in the Target select your <strong>Internet Gateway</strong><br>
-<img src="https://i.imgur.com/cHPh9Ys.png" alt="Imgur"></p>
-<p>-Then go to <strong>Subnet associations</strong>  and <strong>click</strong> Edit Subnet associations<br>
-<img src="https://i.imgur.com/9FTbZ8L.png" alt="Imgur"></p>
-<p>-Then go to subnet associations Select your public subets<br>
-<img src="https://i.imgur.com/Fcov27g.png" alt="Imgur"></p>
-<p>-Then create a another route table<br>
-<img src="https://i.imgur.com/X5onZ2X.png" alt="Imgur"></p>
-<p>-Then go to <strong>Subnet associations</strong>  and <strong>click</strong> Edit Subnet associations<br>
-<img src="https://i.imgur.com/9FTbZ8L.png" alt="Imgur"></p>
-<p>-Then go to <strong>subnet associations</strong> Select your private subets<br>
-<img src="https://i.imgur.com/2h5q6vk.png" alt="Imgur"></p>
+<p><img src="https://i.imgur.com/EAqJR5a.png" alt="Imgur"></p>
+<p>-Then go the rb-public</p>
+<p><img src="https://i.imgur.com/6EB6rAc.png" alt="Imgur"></p>
+<p>-Then click “<strong>Edit routes</strong>”</p>
+<p><img src="https://i.imgur.com/2FDQeaF.png" alt="Imgur"></p>
+<p>-Then click “<strong>Add route</strong>”</p>
+<p><img src="https://i.imgur.com/SxndM24.png" alt="Imgur"></p>
+<p>-Then give <strong>0.0.0.0/0</strong> in then Defination and in the Target select your <strong>Internet Gateway</strong></p>
+<p><img src="https://i.imgur.com/cHPh9Ys.png" alt="Imgur"></p>
+<p>-Then go to <strong>Subnet associations</strong>  and <strong>click</strong> Edit Subnet associations</p>
+<p><img src="https://i.imgur.com/9FTbZ8L.png" alt="Imgur"></p>
+<p>-Then go to subnet associations Select your public subets</p>
+<p><img src="https://i.imgur.com/Fcov27g.png" alt="Imgur"></p>
+<p>-Then create a another route table</p>
+<p><img src="https://i.imgur.com/X5onZ2X.png" alt="Imgur"></p>
+<p>-Then go to <strong>Subnet associations</strong>  and <strong>click</strong> Edit Subnet associations</p>
+<p><img src="https://i.imgur.com/9FTbZ8L.png" alt="Imgur"></p>
+<p>-Then go to <strong>subnet associations</strong> Select your private subets</p>
+<p><img src="https://i.imgur.com/2h5q6vk.png" alt="Imgur"></p>
 <p>-Finall VPC View</p>
 <p><img src="https://i.imgur.com/cQqEicV.png" alt="Imgur"></p>
 </div>
